@@ -1,5 +1,7 @@
 package IkkinchiDars;
 
+import java.util.IllegalFormatException;
+
 /**
  * Quyidagi attributelardan iborat Account klassini
  * encapsulation prinsipi asosida yarating:
@@ -40,7 +42,11 @@ public class Account {
     }
 
     public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+        if(accountNumber>0){
+            this.accountNumber = accountNumber;
+        }else{
+            throw new NumberFormatException("Account nomi 0dan kichik.");
+        }
     }
 
     public int getBalance() {
@@ -48,6 +54,10 @@ public class Account {
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        if(accountNumber>0){
+            this.balance = balance;
+        }else{
+            throw new NumberFormatException("Balans nomi 0dan kichik berilgan.");
+        }
     }
 }
