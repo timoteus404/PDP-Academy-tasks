@@ -1,5 +1,9 @@
 package IkkinchiDars;
 
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
 public class User {
     /**
      * Model package ini ichida quyidagicha atributlari bor bo’lgan
@@ -16,12 +20,31 @@ public class User {
     private String name;
     private String address;
 
+    //Parol o'zgartirish metodi.
     public void changePassword(String oldPassword, String newPassword){
         if (this.password.equals(oldPassword)) {
             setPassword(newPassword);
         }else{
             System.out.println("Parol Noto'g'ri Berildi.");
         }
+    }
+
+    //print qilish metodi. Faqat id, username, email, va password uchun
+    public String print(){
+        return "ID: " + id + "; Username: " + username + "; Email: " + email +"; Password: " + password + ";";
+    }
+
+    //print methodi o'rniga, toString metodigan foydalanib Override qilib print qilsa ham bo'ldi.
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 
     public User() {
