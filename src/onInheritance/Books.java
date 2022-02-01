@@ -16,6 +16,7 @@ public class Books {
     private String title;
     private int totalPage;
 
+
     //additional methods
     public double countNetPrice(){
         return (countTaxedPrice() - (countTaxedPrice()*getDiscount()));
@@ -28,6 +29,12 @@ public class Books {
 
     //constructors
     public Books() {
+    }
+
+    public Books(String author, double price, String title) {
+        this.author = author;
+        this.price = price;
+        this.title = title;
     }
 
     public Books(String author, int price, double discount, String title, int totalPage) {

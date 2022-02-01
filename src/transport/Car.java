@@ -27,4 +27,5 @@ public class Car extends Vehicle{
     public void setStyle(Type style) {
         this.style = style;
     }
+
 }

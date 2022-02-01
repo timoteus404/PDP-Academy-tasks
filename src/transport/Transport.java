@@ -16,7 +16,21 @@ public class Transport {
     public Transport() {
     }
 
-    public Transport(String company, String model, String color, int maxCapacity, double weight, int maxSpeed, int price, int productionYear) {
+    public Transport(int maxCapacity, int maxSpeed, int price) {
+        this.maxCapacity = maxCapacity;
+        this.maxSpeed = maxSpeed;
+        this.price = price;
+    }
+
+    public Transport(String color, int maxCapacity, double weight, int maxSpeed) {
+        this.color = color;
+        this.maxCapacity = maxCapacity;
+        this.weight = weight;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public Transport(String company, String model, String color, int maxCapacity,
+                     double weight, int maxSpeed, int price, int productionYear) {
         this.company = company;
         this.model = model;
         this.color = color;

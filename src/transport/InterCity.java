@@ -9,6 +9,11 @@ public class InterCity extends Train{
         this.type = type;
     }
 
+    public InterCity(double ticketPrice, Type type) {
+        super(ticketPrice);
+        this.type = type;
+    }
+
     //getters and setters
     public Type getType() {
         return type;
