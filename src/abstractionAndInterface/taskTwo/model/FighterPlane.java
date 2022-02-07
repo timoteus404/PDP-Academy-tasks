@@ -4,6 +4,8 @@ import abstractionAndInterface.taskTwo.service.Aircraft;
 
 public class FighterPlane extends Aircraft {
 
+    private Object engine;
+
     //implementation
     @Override
     public void start() {
@@ -24,4 +26,16 @@ public class FighterPlane extends Aircraft {
     public void land() {
         System.out.println("Land!");
     }
+
+    @Override
+    public Object getEngine() {
+        return engine;
+    }
+
+    @Override
+    public void setEngine(Object engine) {
+        this.engine = engine;
+    }
+
+
 }
