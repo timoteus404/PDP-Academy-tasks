@@ -1,5 +1,7 @@
 package funtionalInterface;
 
+import funtionalInterface.five.Calculate;
+import funtionalInterface.five.CheckingPrimeNumbers;
 import funtionalInterface.four.FindNumberInArray;
 
 import java.util.Arrays;
@@ -29,21 +31,68 @@ public class Main {
 //            }
 //        };
 //        System.out.println(biggestInArray.findNumber(nums));
-        int[] nums = {-1,-10,5,-9,-8,0, 8};
-        FindNumberInArray numExists = new FindNumberInArray() {
-            @Override
-            public boolean findNumber(int[] a, int i) {
-                boolean result = false;
-                for(int num: a){
-                    if(num == i){
-                        return true;
-                    }
-                }
-                return result;
+//        int[] nums = {-1,-10,5,-9,-8,0, 8};
+//        FindNumberInArray numExists = new FindNumberInArray() {
+//            @Override
+//            public boolean findNumber(int[] a, int i) {
+//                boolean result = false;
+//                for(int num: a){
+//                    if(num == i){
+//                        return true;
+//                    }
+//                }
+//                return result;
+//            }
+//        };
+//
+//        boolean res = numExists.findNumber(nums, 0);
+//        System.out.println(res);
+
+        Integer[] nums = {23,21,-1,-10,5,-9,-8,0, 8,7,11};
+        Calculate<Integer> sumOfArray = a -> {
+            int sum = 0;
+            for(Integer i: a){
+                sum+=i;
             }
+            return sum;
         };
 
-        boolean res = numExists.findNumber(nums, 0);
-        System.out.println(res);
+        Calculate<Integer> sumOfPositiveInt = a -> {
+            int res = 0;
+
+            for (Integer i : a) {
+                if (i > 0) {
+                    res += i;
+                }
+            }
+            return res;
+        };
+
+        Calculate<Integer> sumOfEven = a -> {
+            int res = 0;
+            for (int i : a) {
+                if (i % 2 != 0) {
+                    res += i;
+                }
+            }
+            return res;
+        };
+
+        Calculate<Integer> sumOfPrimeNumbers = a -> {
+            int sum = 0;
+            for(Integer i: a){
+                if(CheckingPrimeNumbers.isPrime(i)){
+                    sum+=i;
+                }
+            }
+          return sum;
+        };
+
+
+
+        System.out.println(sumOfArray.calculate(nums));
+        System.out.println(sumOfPositiveInt.calculate(nums));
+        System.out.println(sumOfEven.calculate(nums));
+        System.out.println(sumOfPrimeNumbers.calculate(nums));
     }
 }
