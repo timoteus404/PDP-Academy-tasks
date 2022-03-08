@@ -1,8 +1,11 @@
 package funtionalInterface;
 
+import funtionalInterface.eight.AdditionalMethods;
+import funtionalInterface.eight.StringCheck;
 import funtionalInterface.five.Calculate;
 import funtionalInterface.five.CheckingPrimeNumbers;
 import funtionalInterface.four.FindNumberInArray;
+import funtionalInterface.ten.VowelsCheck;
 
 import java.util.Arrays;
 
@@ -94,5 +97,26 @@ public class Main {
         System.out.println(sumOfPositiveInt.calculate(nums));
         System.out.println(sumOfEven.calculate(nums));
         System.out.println(sumOfPrimeNumbers.calculate(nums));
+
+        StringCheck doesExists = AdditionalMethods::isHere;
+        System.out.println(doesExists.doesExists("Timur", "p"));
+
+        VowelsCheck checkingVowels = a->{
+            int sum = 0;
+            char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+
+            for (int i = 0; i < a.length(); i++) {
+
+                for (int j = 0; j < vowels.length; j++) {
+                    if(a.charAt(i) == vowels[j]){
+                        sum++;
+                    }
+                }
+
+            }
+            return sum;
+        };
+        System.out.println(checkingVowels.vowelCount("oooteemriiii"));
+
     }
 }
