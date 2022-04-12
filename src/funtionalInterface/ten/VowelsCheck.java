@@ -5,5 +5,4 @@ public interface VowelsCheck {
 
     int vowelCount(String a);
 
-
 }

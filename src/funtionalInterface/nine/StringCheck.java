@@ -1,4 +1,4 @@
-package funtionalInterface.eight;
+package funtionalInterface.nine;
 
 @FunctionalInterface
 public interface StringCheck {

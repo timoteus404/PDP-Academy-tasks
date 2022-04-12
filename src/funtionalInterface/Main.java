@@ -1,14 +1,6 @@
 package funtionalInterface;
 
-import funtionalInterface.eight.AdditionalMethods;
-import funtionalInterface.eight.StringCheck;
-import funtionalInterface.five.Calculate;
-import funtionalInterface.five.CheckingPrimeNumbers;
-import funtionalInterface.four.FindNumberInArray;
 import funtionalInterface.one.DefineSign;
-import funtionalInterface.ten.VowelsCheck;
-
-import java.util.Arrays;
 
 public class Main {
 
