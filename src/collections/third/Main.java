@@ -1,6 +1,8 @@
 package collections.third;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -65,8 +67,36 @@ public class Main {
         carrss1.add(new Car("black", "kasha", 19856));
         carrss1.add(new Car("yellow", "masha", 789465));
         carrss1.add(new Car("green", "svarsha", 25945));
+
+        System.out.println("******************************");
+        /**
+         * Uzunligi 5 ga teng bo’lgan, ichida Car toifasidagi elementlarni saqlaydigan
+         * cars1 nomli boshqa list yarating va uni ichini to’ldiring.
+         * cars1 list elementlarini cars listning 2 indexidan boshlab joylashtiring
+         */
+        cars.addAll(2, carrss1);
+        System.out.println(cars);
+        System.out.println("******************************");
+        //cars listni model bo’yicha saralang
+        Collections.sort(cars, Comparator.comparing(Car::getModel));
+
+        System.out.println(cars);
+
+        System.out.println("******************************");
+        //cars listidan cars1 listida bor bo’lgan elementlarni o’chiring
+        cars.removeAll(carrss1);
+        System.out.println(cars);
+
+        System.out.println("******************************");
+        //cars listidan cars1 listida yo’q bo’lgan elementlarni o’chiring
+        cars.retainAll(carrss1);
+        System.out.println(cars);
     }
 
+    /**
+     * List ichidan elementlarni random qilib oladigan method yozing.
+     * @param list as parameter
+     */
     public static void randomElement(ArrayList list){
 
         Random random = new Random();
